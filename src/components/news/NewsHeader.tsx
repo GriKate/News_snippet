@@ -1,5 +1,5 @@
 import styles from "./NewsHeader.module.scss";
-import { IData_SnippetNews } from "../types/interfaces";
+import { IData_SnippetNews } from "../../types/interfaces";
 import { GlobalOutlined, ReadOutlined, UserOutlined, FlagOutlined } from '@ant-design/icons';
 import cn from "classnames";
 

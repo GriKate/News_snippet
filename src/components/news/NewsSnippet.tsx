@@ -3,7 +3,7 @@ import styles from "./NewsSnippet.module.scss";
 import { NewsHeader } from "./NewsHeader";
 import { HighlightOutlined, CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 import cn from "classnames";
-import { IData_SnippetNews } from "../types/interfaces";
+import { IData_SnippetNews } from "../../types/interfaces";
 
 export const NewsSnippet = (news: IData_SnippetNews) => {
     const [showAllKeywords, setShowAllKeywords] = useState(false);

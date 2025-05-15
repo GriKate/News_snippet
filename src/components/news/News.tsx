@@ -1,6 +1,6 @@
-import { data } from "../assets/data.ts";
+import { data } from "../../assets/data.ts";
 import { NewsSnippet } from "./NewsSnippet";
-import { NewsHeader } from "./NewsHeader";
+import { NewsHeader } from "./NewsHeader.tsx";
 import styles from "./News.module.scss";
 import { DownOutlined } from '@ant-design/icons';
 import { useState } from "react";
@@ -29,7 +29,7 @@ export const News = () => {
     return (
         <>
             <div>
-                <h1>News</h1>
+                <h3>News</h3>
                 <div className={styles.wrapper}>
                     {data.map((el, key) => 
                         key === 0 &&
