@@ -42,16 +42,16 @@ export const HighlightedTextarea = () => {
 
         if (newStr.includes("=")) {
             // подсвечивать кавычки внутри!
-            const valueRegExp = new RegExp(/([A-Z]+)(=[“”"])([^“”"]*([“”"][^“”"\s]*[“”"])*[^“”"]*)*?([“”"])((\s*[A-Z]{2,}=[“”"])|\s*|\s*[A-Z]{2,})/g);
-            newStr = newStr.replace(valueRegExp, '$1$2<span style="color: purple">$3</span>$5$6');
+            const valueRegExp = new RegExp(/([A-Z]+)(=[“”"])((([^“”"]+)|(([“”"][^\s“”"]+[“”"])+))+)([“”"])(\s+|(\W\s))/g);
+            newStr = newStr.replace(valueRegExp, '$1$2<span style="color: purple">$3</span>$8$9');
 
             keys.map(key => {
             const keyRegExp = new RegExp("(\\b" + key + ")(=)", "g");
             newStr = newStr.replace(keyRegExp, '<span style="color: #3d80cc">$1</span>$2');
         })
         } else {
-            const valueRegExp = new RegExp(/([“”"])(([^“”"]*?([“”"]([^“”"\s])*[“”"])*)*?)([“”"])/g);
-            newStr = newStr.replace(valueRegExp, '$1<span style="color: purple">$2</span>$6');
+            const valueRegExp = new RegExp(/([“”"])((([^“”"]+)|(([“”"][^\s“”"]+[“”"])+))+)([“”"])/g);
+            newStr = newStr.replace(valueRegExp, '$1<span style="color: purple">$2</span>$7');
         }
 
         logWords.map(logword => {
